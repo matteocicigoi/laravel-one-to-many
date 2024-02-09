@@ -1,1 +1,1 @@
-# Esercizio: Laravel Boolfolio - Base
+# Esercizio: Laravel Boolfolio - Project Typology
