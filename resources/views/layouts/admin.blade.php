@@ -71,7 +71,7 @@
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link text-warning {{ Route::currentRouteName() == 'dashboard' ? 'bg-secondary' : '' }}"
-                                    href="{{ route('admin.projects.index') }}">
+                                    href="{{ route('admin.types.index') }}">
                                     <i class="fa-solid fa-layer-group fa-lg fa-fw"></i> Types 
                                 </a>
                             </li>

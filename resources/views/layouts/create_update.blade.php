@@ -27,17 +27,21 @@
                     <input type="text" class="form-control" id="slug" name="slug"
                         value="@if (isset($project)) {{ old('slug', $project->slug) }}@else{{ old('slug') }} @endif">
                 </div>
+                @if(!isset($type))
                 <div class="col-12">
                     <label for="link" class="form-label">Link</label>
                     <input type="text" class="form-control" id="link" name="link"
                         value="@if (isset($project)) {{ old('link', $project->link) }}@else{{ old('link') }} @endif">
                 </div>
+                @endif
+                @if(isset($types))
                 <select class="form-select" aria-label="Default select example" name="type_id">
                     <option>Open this select menu</option>
                     @foreach ($types as $type)
-                        <option value="{{ $type->id }}" @if(old('type_id') == $type->id || (isset($project) && $project->type_id == $type->id)) selected @endif>{{ $type->title }}</option>
+                        <option value="{{ $type->id }}" @if(old('type_id') == $type->id || (isset($project) && $project->type_id == $type->id)) selected @endif>{{ $type->name }}</option>
                     @endforeach
                   </select>
+                  @endif
 
                 <button type="submit" class="btn btn-primary mt-4 col-12 py-3 text-uppercase">Submit</button>
             </div>

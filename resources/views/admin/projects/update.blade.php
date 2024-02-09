@@ -1,10 +1,18 @@
 @extends('layouts.create_update')
 @section('title')
-Update Project
+    @if (!isset($type))
+        Update Project
+    @else
+        Update Type
+    @endif
 @endsection
 @section('route')
-    {{ route('admin.projects.update', $project) }}
+    @if (!isset($type))
+        {{ route('admin.projects.update', $project) }}
+    @else
+        {{ route('admin.types.update', $project) }}
+    @endif
 @endsection
 @section('method')
-@method('PUT')
+    @method('PUT')
 @endsection

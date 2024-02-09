@@ -18,7 +18,7 @@ class TypesTableSeeder extends Seeder
 
         foreach($types as $type){
             $new_type = new Type();
-            $new_type->title = $type;
+            $new_type->name = $type;
             $new_type->slug = Str::of($type)->slug('-');
             $new_type->save();
         }

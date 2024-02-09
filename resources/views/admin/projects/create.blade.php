@@ -1,7 +1,15 @@
 @extends('layouts.create_update')
 @section('title')
-Add Project
+    @if (!isset($type))
+        Add Project
+    @else
+        Add Type
+    @endif
 @endsection
 @section('route')
-    {{ route('admin.projects.store') }}
+    @if (!isset($type))
+        {{ route('admin.projects.store') }}
+    @else
+        {{ route('admin.types.store') }}
+    @endif
 @endsection
